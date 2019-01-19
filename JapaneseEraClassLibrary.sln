@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JapaneseEraClassLibrary", "JapaneseEraClassLibrary\JapaneseEraClassLibrary.csproj", "{6EE12C94-6D95-4968-A147-F82A05E44308}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JapaneseEraClassLibraryTest", "JapaneseEraClassLibraryTest\JapaneseEraClassLibraryTest.csproj", "{A6BA1415-BF55-415B-B9BB-35F1E74E0374}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6EE12C94-6D95-4968-A147-F82A05E44308}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EE12C94-6D95-4968-A147-F82A05E44308}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EE12C94-6D95-4968-A147-F82A05E44308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BA1415-BF55-415B-B9BB-35F1E74E0374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BA1415-BF55-415B-B9BB-35F1E74E0374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BA1415-BF55-415B-B9BB-35F1E74E0374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BA1415-BF55-415B-B9BB-35F1E74E0374}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
