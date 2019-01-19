@@ -8,11 +8,30 @@ namespace JapaneseEraClassLibraryTest
     public class UnitTest1
     {
 
+        System.Globalization.CultureInfo cultureInfo;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            // テスト クラスのすべてのテストに必要なリソースの割り当ておよび構成を行うために、テストの前に実行するメソッドを識別します。
+            cultureInfo = new System.Globalization.CultureInfo("ja-JP", false);
+            cultureInfo.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
+            DateTime theDate = new DateTime(1868, 1, 25);
             // 明治最初
-            Assert.AreEqual("明治01年01月25日", JapaneseEra.GetEraYMD(new DateTime(1868, 1, 25)));
+            Assert.AreEqual("明治01年01月25日", JapaneseEra.GetEraYMD(theDate));
+        }
+
+        [TestMethod]
+        public void TestMethod1_2()
+        {
+            DateTime theDate = new DateTime(1868, 9, 8);
+            // 明治最初
+            Assert.AreEqual(JapaneseYMD(theDate), JapaneseEra.GetEraYMD(theDate));
         }
 
         [TestMethod]
@@ -72,5 +91,11 @@ namespace JapaneseEraClassLibraryTest
             // 新元号最初
             Assert.AreEqual("新元01年05月01日", JapaneseEra.GetEraYMD(new DateTime(2019, 5, 1)));
         }
+
+        public string JapaneseYMD(DateTime theDate)
+        {
+            return theDate.ToString("gyy年MM月dd日", cultureInfo);
+        }
+
     }
 }

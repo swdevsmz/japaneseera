@@ -6,20 +6,42 @@ using System.Threading.Tasks;
 
 namespace JapaneseEraClassLibrary
 {
+    /// <summary>
+    /// 和暦クラスです。
+    /// </summary>
     public class JapaneseEra
     {
-        // 元号の開始日
+        /// <summary>
+        /// 元号の開始日 
+        /// </summary>
         public DateTime StartDate { get; }
-        // 元号の名称
+
+        /// <summary>
+        ///  元号の名称 
+        /// </summary>
         public string Name { get; }
-        // 元号の頭文字
+
+        /// <summary>
+        /// 元号の頭文字
+        /// </summary>
         public string FirstLetter { get; }
-        // ローマ字表記の名称
+
+        /// <summary>
+        /// ローマ字表記の名称
+        /// </summary>
         public string EnglishName { get; }
-        // ローマ字表記の頭文字
+
+        /// <summary>
+        /// ローマ字表記の頭文字
+        /// </summary>
         public string EnglishFirstLetter { get; }
 
-        // コンストラクタ
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="name"></param>
+        /// <param name="englishName"></param>
         private JapaneseEra(DateTime startDate, string name, string englishName)
         {
             StartDate = startDate;
@@ -29,7 +51,9 @@ namespace JapaneseEraClassLibrary
             EnglishFirstLetter = EnglishName.Substring(0, 1);
         }
 
-        // 静的プロパティ：JapaneseEraインスタンスを収めた読み取り専用のリスト
+        /// <summary>
+        /// 静的プロパティ：JapaneseEraインスタンスを収めた読み取り専用のリスト 
+        /// </summary>
         public static IList<JapaneseEra> Table { get; }
           = new List<JapaneseEra>() // 順序が保証されるコレクションを使う
           {
@@ -42,11 +66,19 @@ namespace JapaneseEraClassLibrary
           }
           .AsReadOnly(); // リストの内容を変更できないようにする
 
-        // 日付に該当するJapaneseEraインスタンスを得る
+        /// <summary>
+        /// 日付に該当するJapaneseEraインスタンスを得る 
+        /// </summary>
+        /// <param name="theDate"></param>
+        /// <returns></returns>
         private static JapaneseEra GetEra(DateTime theDate)
           => Table.FirstOrDefault(era => (era.StartDate <= theDate));
 
-        // 日付から和暦の年月日を得る
+        /// <summary>
+        /// 日付から和暦の年月日を得る
+        /// </summary>
+        /// <param name="theDate"></param>
+        /// <returns></returns>
         public static string GetEraYMD(DateTime theDate)
         {
             var e = GetEra(theDate);
