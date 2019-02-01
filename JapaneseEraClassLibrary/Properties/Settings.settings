@@ -1,0 +1,19 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="JapaneseEraClassLibrary.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="JapaneseEraTable" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+                  {
+                  "JapaneseEraTable":[
+                  {"startDate":"2019-05-01","Name":"元新","EnglishName":"Genshin"},
+                  {"startDate":"1989-01-08","Name":"平成","EnglishName":"Heisei"},
+                  {"startDate":"1926-12-25","Name":"昭和","EnglishName":"Showa"},
+                  {"startDate":"1912-07-30","Name":"大正","EnglishName":"Taisho"},
+                  {"startDate":"1868-01-25","Name":"明治","EnglishName":"Meiji"}
+                  ]
+                  }
+                </Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
