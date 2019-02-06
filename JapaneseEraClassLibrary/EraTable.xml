@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EraTable>
+  <Era>
+    <StartDate>2019-05-01</StartDate>
+    <EndDate></EndDate>
+    <Name>新元</Name>
+    <EnglishName></EnglishName>
+  </Era>  
+  <Era>
+    <StartDate>1989-01-08</StartDate>
+    <EndDate>2019-04-30</EndDate>
+    <Name>平成</Name>
+    <EnglishName></EnglishName>
+  </Era>
+  <Era>
+    <StartDate>1926-12-25</StartDate>
+    <EndDate>1989-01-07</EndDate>
+    <Name>昭和</Name>
+    <EnglishName></EnglishName>
+  </Era>
+  <Era>
+    <StartDate>1912-07-30</StartDate>
+    <EndDate>1926-12-24</EndDate>
+    <Name>大正</Name>
+    <EnglishName></EnglishName>
+  </Era>
+  <Era>
+    <StartDate>1868-01-25</StartDate>
+    <EndDate>1912-07-29</EndDate>
+    <Name>明治</Name>
+    <EnglishName></EnglishName>
+  </Era>
+</EraTable>
