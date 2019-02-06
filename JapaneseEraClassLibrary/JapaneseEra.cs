@@ -39,7 +39,8 @@ namespace JapaneseEraClassLibrary
         /// <param name="theDate"></param>
         /// <returns></returns>
         private static Era GetEra(DateTime theDate)
-          => table.eras.FirstOrDefault(era => (era.StartDateTime.Date <= theDate.Date && theDate.Date <= era.EndDateTime.Date));
+          => table.eras.FirstOrDefault(era => (era.StartDate.Date <= theDate.Date && 
+                            theDate.Date <= (era.EndDate.HasValue ? era.EndDate.Value.Date : DateTime.MaxValue.Date)));
 
         /// <summary>
         /// 日付から和暦の年月日を得る
@@ -49,7 +50,7 @@ namespace JapaneseEraClassLibrary
         public static string GetYMD(DateTime theDate)
         {
             var e = GetEra(theDate);
-            return $"{e.Name}{(theDate.Year - e.StartDateTime.Year + 1):00}年{theDate:MM月dd日}";
+            return $"{e.Name}{(theDate.Year - e.StartDate.Year + 1):00}年{theDate:MM月dd日}";
         }
 
     }
@@ -70,13 +71,13 @@ namespace JapaneseEraClassLibrary
         /// 元号の開始日 
         /// </summary>
         [System.Xml.Serialization.XmlElement("StartDate")]
-        public string StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
         /// <summary>
         /// 元号の開始日 
         /// </summary>
-        [System.Xml.Serialization.XmlElement("EndDate")]
-        public string EndDate { get; set; }
+        [System.Xml.Serialization.XmlElement("EndDate", IsNullable = true)]
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
         ///  元号の名称 
@@ -90,6 +91,7 @@ namespace JapaneseEraClassLibrary
         [System.Xml.Serialization.XmlElement("EnglishName")]
         public string EnglishName { get; set; }
 
+        /*
         [System.Xml.Serialization.XmlIgnore]
         public DateTime StartDateTime
         {
@@ -106,6 +108,7 @@ namespace JapaneseEraClassLibrary
                 return String.IsNullOrEmpty(this.EndDate) ? DateTime.MaxValue : DateTime.Parse(this.EndDate);
             }
         }
+        */
     }
 
 
